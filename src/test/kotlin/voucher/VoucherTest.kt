@@ -38,6 +38,7 @@ class VoucherTest {
             val voucher = mapper.selectPromotionById(1)
 
             assertThat(voucher.id).isEqualTo(1)
+            assertThat(voucher.memo).isEqualTo("memo")
         }
     }
 
