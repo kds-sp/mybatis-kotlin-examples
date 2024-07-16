@@ -1,3 +1,7 @@
+# 테스트 방법
+
+    $ ./gradlew test --tests "example01.Example01Test.selectPersonWithAllFields"
+
 # MyBatis Kotlin Examples
 
 This project demonstrates use of MyBatis with the Kotlin language.  This is a work in progress, and we will update as
