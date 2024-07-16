@@ -71,7 +71,7 @@ class VoucherTest {
             val voucher = mapper.selectPromotionByI아이디D와name과applicablePlanTypes(1)
 
             assertThat(voucher.id).isEqualTo(1)
-            assertTrue(voucher.applicablePlanTypes.equals(listOf("A","B")))
+            assertTrue(voucher.applicablePlanTypes == listOf("A","B"))
 
             println("name=${voucher.name}")
         }
