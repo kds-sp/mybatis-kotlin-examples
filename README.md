@@ -1,3 +1,11 @@
+# 결론
+
+1. 생성자 선택 : sql 문의 컬럼 목록의 개수와 일치하는 생성자가 선택됨
+2. resultMap의 \<constructor\>는 무시됨
+3. 사용 가이드
+   1. resultMap과 \<constructor\> 사용하지 않기
+   2. 초기화는 생성자에서 한다(TypeHandler 사용 불가)
+
 # 테스트 방법
 
     $ ./gradlew test --tests "voucher.VoucherTest.selectVoucherWithAllFields"
