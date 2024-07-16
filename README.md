@@ -1,6 +1,6 @@
 # 테스트 방법
 
-    $ ./gradlew test --tests "example01.Example01Test.selectPersonWithAllFields"
+    $ ./gradlew test --tests "voucher.VoucherTest.selectVoucherWithAllFields"
 
 # MyBatis Kotlin Examples
 
