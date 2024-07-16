@@ -10,10 +10,8 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder
 import org.apache.ibatis.transaction.jdbc.JdbcTransactionFactory
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
-import org.junit.jupiter.api.TestFactory
 import java.io.InputStreamReader
 import java.sql.DriverManager
-import java.time.LocalDate
 
 /**
  * 메소드를 각각 따로 실행해야 함
@@ -72,7 +70,7 @@ class VoucherTest {
             val voucher = mapper.selectPromotionByI아이디D와name과applicablePlanTypes(1)
 
             assertThat(voucher.id).isEqualTo(1)
-            assertTrue(voucher.applicablePlanTypespes.equals(listOf("A","B")))
+            assertTrue(voucher.applicablePlanTypes.equals(listOf("A","B")))
 
             println("name=${voucher.name}")
         }

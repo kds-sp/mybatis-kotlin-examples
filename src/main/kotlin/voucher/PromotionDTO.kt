@@ -1,8 +1,5 @@
 package voucher
 
-import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
-
 open class PromotionDto(
     val id: Long,
     val name: String,
@@ -25,7 +22,7 @@ open class PromotionDto아이디만(
 open class PromotionDtoID와name과applicablePlanTypes (
     val id: Long,
     val name: String,
-    val applicablePlanTypespes: List<String>,
+    val applicablePlanTypes: List<String>,
 ) {
     constructor(id: Long, name: String, applicablePlanTypes:String) : this(
         id,
