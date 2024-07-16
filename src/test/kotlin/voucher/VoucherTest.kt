@@ -8,12 +8,22 @@ import org.apache.ibatis.session.Configuration
 import org.apache.ibatis.session.SqlSession
 import org.apache.ibatis.session.SqlSessionFactoryBuilder
 import org.apache.ibatis.transaction.jdbc.JdbcTransactionFactory
+import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.TestFactory
 import java.io.InputStreamReader
 import java.sql.DriverManager
 import java.time.LocalDate
 
+/**
+ * 메소드를 각각 따로 실행해야 함
+ */
 class VoucherTest {
+    companion object {
+        const val JDBC_URL = "jdbc:hsqldb:mem:aname"
+        const val JDBC_DRIVER = "org.hsqldb.jdbcDriver"
+    }
+
     private fun newSession(): SqlSession {
         Class.forName(JDBC_DRIVER)
         val script = javaClass.getResourceAsStream("/CreateSimpleDB.sql")
@@ -54,8 +64,18 @@ class VoucherTest {
         }
     }
 
-    companion object {
-        const val JDBC_URL = "jdbc:hsqldb:mem:aname"
-        const val JDBC_DRIVER = "org.hsqldb.jdbcDriver"
+    @Test
+    fun selectPromotionByI아이디와name과applicablePlanTypesTest() {
+        newSession().use { session ->
+            val mapper = session.getMapper(VoucherMapper::class.java)
+
+            val voucher = mapper.selectPromotionByI아이디D와name과applicablePlanTypes(1)
+
+            assertThat(voucher.id).isEqualTo(1)
+            assertTrue(voucher.applicablePlanTypespes.equals(listOf("A","B")))
+
+            println("name=${voucher.name}")
+        }
+
     }
 }

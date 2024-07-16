@@ -77,7 +77,7 @@ insert into promotion values(
     3,
     'Y',
     'memo',
-    'name',
+    '이름',
     'prefix_code',
     'N'
 )
