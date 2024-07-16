@@ -30,6 +30,21 @@ create table GeneratedAlways (
    primary key(id)
 );
 
+insert into Address values(1, '123 Main Street', 'Bedrock', 'IN');
+insert into Address values(2, '456 Main Street', 'Bedrock', 'IN');
+
+insert into Person values(1, 'Fred', 'Flintstone', '1935-02-01', 'Yes', 'Brontosaurus Operator', 1, null);
+insert into Person values(2, 'Wilma', 'Flintstone', '1940-02-01', 'Yes', 'Accountant', 1, null);
+insert into Person(id, first_name, last_name, birth_date, employed, address_id, parent_id) values(3, 'Pebbles', 'Flintstone', '1960-05-06', 'No', 1, 2);
+insert into Person values(4, 'Barney', 'Rubble', '1937-02-01', 'Yes', 'Brontosaurus Operator', 2, null);
+insert into Person values(5, 'Betty', 'Rubble', '1943-02-01', 'Yes', 'Engineer', 2, null);
+insert into Person(id, first_name, last_name, birth_date, employed, address_id, parent_id) values(6, 'Bamm Bamm', 'Rubble', '1963-07-08', 'No', 2, 4);
+
+insert into GeneratedAlways(first_name, last_name) values('Fred', 'Flintstone');
+insert into GeneratedAlways(first_name, last_name) values('Wilma', 'Flintstone');
+insert into GeneratedAlways(first_name, last_name) values('Barney', 'Rubble');
+insert into GeneratedAlways(first_name, last_name) values('Betty', 'Rubble');
+
 CREATE TABLE promotion (
    id int,
    created_at date,
@@ -49,17 +64,21 @@ CREATE TABLE promotion (
 )
 ;
 
-insert into Address values(1, '123 Main Street', 'Bedrock', 'IN');
-insert into Address values(2, '456 Main Street', 'Bedrock', 'IN');
-
-insert into Person values(1, 'Fred', 'Flintstone', '1935-02-01', 'Yes', 'Brontosaurus Operator', 1, null);
-insert into Person values(2, 'Wilma', 'Flintstone', '1940-02-01', 'Yes', 'Accountant', 1, null);
-insert into Person(id, first_name, last_name, birth_date, employed, address_id, parent_id) values(3, 'Pebbles', 'Flintstone', '1960-05-06', 'No', 1, 2);
-insert into Person values(4, 'Barney', 'Rubble', '1937-02-01', 'Yes', 'Brontosaurus Operator', 2, null);
-insert into Person values(5, 'Betty', 'Rubble', '1943-02-01', 'Yes', 'Engineer', 2, null);
-insert into Person(id, first_name, last_name, birth_date, employed, address_id, parent_id) values(6, 'Bamm Bamm', 'Rubble', '1963-07-08', 'No', 2, 4);
-
-insert into GeneratedAlways(first_name, last_name) values('Fred', 'Flintstone');
-insert into GeneratedAlways(first_name, last_name) values('Wilma', 'Flintstone');
-insert into GeneratedAlways(first_name, last_name) values('Barney', 'Rubble');
-insert into GeneratedAlways(first_name, last_name) values('Betty', 'Rubble');
+insert into promotion values(
+    1,
+    '1935-02-01',
+    '1945-02-01',
+    'A,B',
+    'deactivate_reason',
+    '1945-02-01',
+    '1945-02-01',
+    1,
+    2,
+    3,
+    'Y',
+    'memo',
+    'name',
+    'prefix_code',
+    'N'
+)
+;
