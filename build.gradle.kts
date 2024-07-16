@@ -34,6 +34,8 @@ dependencies {
     testImplementation ("org.junit.jupiter:junit-jupiter-api:5.10.2")
     testImplementation ("org.junit.jupiter:junit-jupiter-engine:5.10.2")
     testImplementation ("org.hsqldb:hsqldb:2.7.3")
+
+    implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.5.0")
 }
 
 tasks.withType<Test> {
