@@ -31,7 +31,7 @@ class VoucherTest {
     }
 
     @Test
-    fun selectPersonWithAllFields() {
+    fun selectVoucherWithAllFields() {
         newSession().use { session ->
             val mapper = session.getMapper(VoucherMapper::class.java)
 
@@ -39,6 +39,18 @@ class VoucherTest {
 
             assertThat(voucher.id).isEqualTo(1)
             assertThat(voucher.memo).isEqualTo("memo")
+        }
+    }
+
+
+    @Test
+    fun selectVoucherWithAllFields아이디만() {
+        newSession().use { session ->
+            val mapper = session.getMapper(VoucherMapper::class.java)
+
+            val voucher = mapper.selectPromotionById아이디만(1)
+
+            assertThat(voucher.id).isEqualTo(1)
         }
     }
 

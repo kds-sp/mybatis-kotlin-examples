@@ -14,3 +14,10 @@ open class PromotionDto(
     var isActivated: String,
     val memo: String?
 )
+
+open class PromotionDto아이디만(
+    val id: Long,
+    val someValue: Long,
+) {
+    constructor(id: Long) : this(id, id) {}
+}

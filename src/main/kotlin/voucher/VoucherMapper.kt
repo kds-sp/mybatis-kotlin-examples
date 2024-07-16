@@ -9,4 +9,10 @@ interface VoucherMapper {
         "from promotion where id = #{value}"
     )
     fun selectPromotionById(id: Int): PromotionDto
+
+    @Select(
+        "select id",
+        "from promotion where id = #{value}"
+    )
+    fun selectPromotionById아이디만(id: Int): PromotionDto아이디만
 }
