@@ -30,6 +30,25 @@ create table GeneratedAlways (
    primary key(id)
 );
 
+CREATE TABLE promotion (
+   id int,
+   created_at date,
+   updated_at date,
+   applicable_plan_types varchar(255),
+   deactivate_reason varchar(255),
+   end_date_time date,
+   start_date_time date,
+   issued_count int,
+   registered_count int,
+   remain_count int,
+   is_activated varchar(1),
+   memo varchar(255),
+   name varchar(255),
+   prefix_code varchar(255),
+   is_expired varchar(1)
+)
+;
+
 insert into Address values(1, '123 Main Street', 'Bedrock', 'IN');
 insert into Address values(2, '456 Main Street', 'Bedrock', 'IN');
 
